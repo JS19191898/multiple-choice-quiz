@@ -2,6 +2,7 @@ const quizContainer = document.getElementById('quiz')
 const resultsContainer  = document.getElementById('results')
 const submitbutton = document.getElementById('submit')
 
+
 function buildQuiz(){
     // variable to store the HTML output
     const output = [];
