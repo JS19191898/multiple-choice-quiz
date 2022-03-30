@@ -151,5 +151,5 @@ const myQuestions = [
 // to display quiz
 buildQuiz();
 
-//after submission, show results
+// event listener that says to show results after submit button is clicked
 submitbutton.addEventListener('click', showResults);
