@@ -1,4 +1,4 @@
-//list of functions (lines 2-35, and lines 37-71)
+//functions (lines 2-40, lines 42-76, and lines 78-96)
 function buildQuiz(){
     // variable to store the HTML output
     const output = [];
@@ -75,7 +75,28 @@ function showResults(){
   resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
 }
 
-//list of variables (line 74, line 75, line 76, and lines 77-149)
+function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
+    }
+    else{
+      previousButton.style.display = 'inline-block';
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
+  }
+  // ^function showSlide added to introduce page nav to js file. 
+
+//variables (line 74, line 75, line 76, and lines 77-149)
 const quizContainer = document.getElementById('quiz')
 const resultsContainer  = document.getElementById('results')
 const submitbutton = document.getElementById('submit')
@@ -153,8 +174,17 @@ const myQuestions = [
     
 ];
 
-// to display quiz
+// to begin the quiz
 buildQuiz();
 
-// event listener that says to show results after submit button is clicked
+// pagination
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
+
+// shows the first slide
+showSlide(currentSlide);
+
+// event listeners 
 submitbutton.addEventListener('click', showResults);
