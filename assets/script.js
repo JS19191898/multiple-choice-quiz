@@ -1,8 +1,4 @@
-const quizContainer = document.getElementById('quiz')
-const resultsContainer  = document.getElementById('results')
-const submitbutton = document.getElementById('submit')
-
-
+//list of functions (lines 2-35, and lines 37-71)
 function buildQuiz(){
     // variable to store the HTML output
     const output = [];
@@ -53,6 +49,7 @@ function showResults(){
     const answerContainer = answerContainers[questionNumber];
     const selector = `input[name=question${questionNumber}]:checked`;
     const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+    //added || {} (aka "or empty object") to avoid error otherwise caused by .value
 
     // if answer is correct
     if(userAnswer === currentQuestion.correctAnswer){
@@ -73,12 +70,10 @@ function showResults(){
   resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
 }
 
-// to display quiz
-buildQuiz();
-
-//after submission, show results
-submitbutton.addEventListener('click', showResults);
-
+//list of variables (line 74, line 75, line 76, and lines 77-149)
+const quizContainer = document.getElementById('quiz')
+const resultsContainer  = document.getElementById('results')
+const submitbutton = document.getElementById('submit')
 const myQuestions = [
     {
         question: "What does a thermometer measure?", 
@@ -152,3 +147,9 @@ const myQuestions = [
     }, 
     
 ];
+
+// to display quiz
+buildQuiz();
+
+//after submission, show results
+submitbutton.addEventListener('click', showResults);
