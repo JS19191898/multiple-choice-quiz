@@ -2,7 +2,7 @@
 
 I worked to build a multiple choice quiz, complete with html, css, and js code. The js is responsible for executing navigation and submit buttons, indicating right vs wrong answers by color differentiation, and the display of a countdown timer, among other things. 
 
-Repo link: https://github.com/JS19191898/multiple-choice-quiz/edit/main/README.md
+Repo link: https://github.com/JS19191898/multiple-choice-quiz
 
 Webpage link: https://js19191898.github.io/multiple-choice-quiz/
 ![screenshot-1](https://user-images.githubusercontent.com/99297739/160748224-d64d3740-95ed-432b-ab1e-0672222b77b0.PNG)
