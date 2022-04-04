@@ -1,5 +1,5 @@
-// 10 minutes from now
-var time_in_minutes = 10;
+// 5 minutes from now
+var time_in_minutes = 5;
 var current_time = Date.parse(new Date());
 var deadline = new Date(current_time + time_in_minutes*60*1000);
 
